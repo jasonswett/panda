@@ -1,0 +1,25 @@
+---
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:13.1-alpine
+    volumes:
+      - postgresql:/var/lib/postgresql/data:delegated
+    ports:
+      - "127.0.0.1:5432:5432"
+    environment:
+      POSTGRES_USER: panda
+      POSTGRES_HOST_AUTH_METHOD: trust
+
+  redis:
+    image: redis:4.0.14-alpine
+    volumes:
+      - redis:/data:delegated
+    ports:
+      - "127.0.0.1:6381:6379"
+
+volumes:
+  postgresql:
+  redis:
+  storage:
