@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :word do
-    english { "MyString" }
-    pinyin { "MyString" }
-    chinese_simplified { "MyString" }
+    chinese_simplified { "大" }
+    pinyin { "dà" }
+    english { "big" }
   end
 end
