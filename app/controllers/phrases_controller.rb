@@ -2,6 +2,10 @@ class PhrasesController < ApplicationController
   before_action :set_phrase, only: %i[ show edit update destroy ]
   before_action :authenticate_user!
 
+  before_action do
+    raise ActionController::RoutingError.new("Not Found") unless current_user.is_admin
+  end
+
   def index
     @phrases = Phrase.order("created_at desc")
   end
