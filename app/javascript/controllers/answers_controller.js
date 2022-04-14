@@ -5,15 +5,20 @@ export default class extends Controller {
     e.preventDefault()
     e.target.style.backgroundColor = "#F00"
     this.correctAnswerElement().style.backgroundColor = "#0F0"
-
-    let delay = 500;
-    if (e.target === this.correctAnswerElement()) {
-      delay = 50;
-    }
-    setTimeout(() => { window.location = e.target.href }, delay)
+    this.advance(e.target)
   }
 
   correctAnswerElement() {
     return document.getElementsByClassName("correct-answer")[0]
+  }
+
+  advance(clickedElement) {
+    let delay = 500
+
+    if (clickedElement === this.correctAnswerElement()) {
+      delay = 50
+    }
+
+    setTimeout(() => { window.location = clickedElement.href }, delay)
   }
 }
