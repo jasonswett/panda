@@ -6,6 +6,20 @@
   @apply my-4;
 }
 
+.field label {
+  @apply font-bold;
+}
+
+input[type=text] {
+  width: 300px;
+  @apply rounded;
+}
+
 .btn, input[type=submit] {
   @apply text-white no-underline bg-blue-600 px-4 py-2 rounded mb-4;
+}
+
+h1, h2 {
+  font-size: 150%;
+  @apply font-bold mb-4;
 }

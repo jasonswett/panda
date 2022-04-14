@@ -11,22 +11,22 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :english, style: "display: block" %>
-    <%= form.text_field :english %>
-  </div>
-
-  <div>
-    <%= form.label :pinyin, style: "display: block" %>
-    <%= form.text_field :pinyin %>
-  </div>
-
-  <div>
+  <div class="field">
     <%= form.label :chinese_simplified, style: "display: block" %>
     <%= form.text_field :chinese_simplified %>
   </div>
 
-  <div>
+  <div class="field">
+    <%= form.label :pinyin, style: "display: block" %>
+    <%= form.text_field :pinyin %>
+  </div>
+
+  <div class="field">
+    <%= form.label :english, style: "display: block" %>
+    <%= form.text_field :english %>
+  </div>
+
+  <div class="field">
     <%= form.submit %>
   </div>
 <% end %>
