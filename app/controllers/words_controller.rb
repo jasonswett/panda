@@ -2,9 +2,8 @@ class WordsController < ApplicationController
   before_action :set_word, only: %i[ show edit update destroy ]
   before_action :authenticate_user!
 
-  # GET /words or /words.json
   def index
-    @words = Word.all
+    @words = Word.order("created_at desc")
   end
 
   # GET /words/1 or /words/1.json
@@ -20,18 +19,13 @@ class WordsController < ApplicationController
   def edit
   end
 
-  # POST /words or /words.json
   def create
     @word = Word.new(word_params)
 
-    respond_to do |format|
-      if @word.save
-        format.html { redirect_to word_url(@word), notice: "Word was successfully created." }
-        format.json { render :show, status: :created, location: @word }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @word.errors, status: :unprocessable_entity }
-      end
+    if @word.save
+      redirect_to words_url, notice: "Word was successfully created."
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 
