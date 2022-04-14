@@ -4,8 +4,11 @@
   </div>
 </div>
 
-<div class="answers">
-  <% @options.each do |word| %>
-    <%= link_to word, root_path, class: "answer-button" %>
+<div class="answers" data-controller="answers">
+  <% @options.each do |option| %>
+    <%= link_to option,
+      root_path,
+      class: "answer-button #{option == @word.english ? "correct-answer" : ""}",
+      data: { action: "click->answers#select" } %>
   <% end %>
 </div>
