@@ -6,6 +6,6 @@
 
 <div class="answers">
   <% @options.each do |word| %>
-    <a href="#" class="answer-button"><%= word %></a>
+    <%= link_to word, root_path, class: "answer-button" %>
   <% end %>
 </div>
