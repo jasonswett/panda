@@ -6,6 +6,6 @@
   @apply my-4;
 }
 
-input[type=submit] {
-  @apply text-white bg-blue-600 px-4 py-2 rounded mb-4;
+.btn, input[type=submit] {
+  @apply text-white no-underline bg-blue-600 px-4 py-2 rounded mb-4;
 }

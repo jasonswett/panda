@@ -2,13 +2,22 @@
 
 <h1>Words</h1>
 
-<div id="words">
-  <% @words.each do |word| %>
-    <%= render word %>
-    <p>
-      <%= link_to "Show this word", word %>
-    </p>
-  <% end %>
+<div class="field">
+  <%= link_to "New Word", new_word_path, class: "btn" %>
 </div>
 
-<%= link_to "New word", new_word_path %>
+<table class="mt-10">
+  <tr>
+    <th class="border border-black p-2">Chinese</th>
+    <th class="border border-black p-2">Pinyin</th>
+    <th class="border border-black p-2">English</th>
+  </tr>
+
+  <% @words.each do |word| %>
+    <tr>
+      <td class="border border-black p-2"><%= word.chinese_simplified %></td>
+      <td class="border border-black p-2"><%= word.pinyin %></td>
+      <td class="border border-black p-2"><%= word.english %></td>
+    </tr>
+  <% end %>
+</table>
