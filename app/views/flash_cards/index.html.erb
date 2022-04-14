@@ -8,7 +8,7 @@
   <% @options.each do |option| %>
     <%= link_to option,
       root_path,
-      class: "answer-button #{option == @word.english ? "correct-answer" : ""}",
+      class: "answer-button #{option == @word.pinyin ? "correct-answer" : ""}",
       data: { action: "click->answers#select" } %>
   <% end %>
 </div>
