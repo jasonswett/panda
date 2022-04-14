@@ -32,11 +32,6 @@ body {
   align-items: center;
 }
 
-.card-inner {
-  text-align: center;
-  width: 100%;
-}
-
 .answers {
   max-width: 400px;
 }
