@@ -52,3 +52,8 @@ a {
   color: #00F;
   text-decoration: underline;
 }
+
+h2 {
+  font-weight: bold;
+  font-size: 150%;
+}
