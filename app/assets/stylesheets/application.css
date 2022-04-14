@@ -38,10 +38,7 @@ body {
 }
 
 .answers {
-  display: flex;
-  justify-content: space-between;
   max-width: 400px;
-  margin: 80px auto 0 auto;
 }
 
 .answer-button {
@@ -51,7 +48,7 @@ body {
   color: #000;
   border: 2px solid #CCC;
   padding: 15px;
-  min-width: 70px;
+  min-width: 100px;
   text-align: center;
   font-size: 24px;
 }

@@ -4,11 +4,13 @@
   </div>
 </div>
 
-<div class="answers" data-controller="answers">
-  <% @options.each do |option| %>
-    <%= link_to option,
-      root_path,
-      class: "answer-button #{option == @word.pinyin ? "correct-answer" : ""}",
-      data: { action: "click->answers#select" } %>
-  <% end %>
+<div class="px-2">
+  <div class="answers flex justify-between mx-auto mt-20" data-controller="answers">
+    <% @options.each do |option| %>
+      <%= link_to option,
+        root_path,
+        class: "answer-button #{option == @word.pinyin ? "correct-answer" : ""}",
+        data: { action: "click->answers#select" } %>
+    <% end %>
+  </div>
 </div>
