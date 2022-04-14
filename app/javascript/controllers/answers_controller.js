@@ -1,24 +1,44 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  select(e) {
+  initialize() {
+    document.addEventListener("keydown", (e) => {
+      if (Number(e.key) !== Number(e.key)) {
+        return
+      }
+
+      let index = Number(e.key) - 1
+
+      if (index < 0 || index > 2) {
+        return
+      }
+
+      this.select(document.getElementsByClassName("answer-button")[index])
+    })
+  }
+
+  handleClick(e) {
     e.preventDefault()
-    e.target.style.backgroundColor = "#F00"
+    this.select(e.target)
+  }
+
+  select(selectedElement) {
+    selectedElement.style.backgroundColor = "#F00"
     this.correctAnswerElement().style.backgroundColor = "#0F0"
-    this.advance(e.target)
+    this.advance(selectedElement)
   }
 
   correctAnswerElement() {
     return document.getElementsByClassName("correct-answer")[0]
   }
 
-  advance(clickedElement) {
+  advance(selectedElement) {
     let delay = 500
 
-    if (clickedElement === this.correctAnswerElement()) {
+    if (selectedElement === this.correctAnswerElement()) {
       delay = 50
     }
 
-    setTimeout(() => { window.location = clickedElement.href }, delay)
+    setTimeout(() => { window.location = selectedElement.href }, delay)
   }
 }

@@ -10,7 +10,7 @@
       <%= link_to option,
         root_path,
         class: "answer-button #{option == @phrase.pinyin ? "correct-answer" : ""}",
-        data: { action: "click->answers#select" } %>
+        data: { action: "click->answers#handleClick" } %>
     <% end %>
   </div>
 </div>
