@@ -1,0 +1,11 @@
+<div class="card">
+  <div class="card-inner">
+		<%= @word.chinese_simplified %>
+  </div>
+</div>
+
+<div class="answers">
+  <% @options.each do |word| %>
+    <a href="#" class="answer-button"><%= word %></a>
+  <% end %>
+</div>
