@@ -3,7 +3,7 @@
 require "rails_helper"
 
 RSpec.describe "Signing in", type: :system do
-  before { create(:word) }
+  before { create(:phrase) }
 
   context "with valid credentials" do
     describe "using username" do

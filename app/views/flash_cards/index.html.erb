@@ -1,6 +1,6 @@
 <div class="card text-center">
   <div class="w-full">
-		<%= @word.chinese_simplified %>
+		<%= @phrase.chinese_simplified %>
   </div>
 </div>
 
@@ -9,7 +9,7 @@
     <% @options.each do |option| %>
       <%= link_to option,
         root_path,
-        class: "answer-button #{option == @word.pinyin ? "correct-answer" : ""}",
+        class: "answer-button #{option == @phrase.pinyin ? "correct-answer" : ""}",
         data: { action: "click->answers#select" } %>
     <% end %>
   </div>
