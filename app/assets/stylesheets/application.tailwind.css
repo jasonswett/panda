@@ -62,3 +62,11 @@ a {
   color: #00F;
   text-decoration: underline;
 }
+
+.text-content {
+  max-width: 600px;
+}
+
+p {
+  @apply my-6;
+}

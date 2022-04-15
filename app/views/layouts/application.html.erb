@@ -13,15 +13,18 @@
 
   <body>
     <header class="flex justify-between mb-10">
-      <%= link_to "Home", root_path %>
+      <div class="flex space-x-2">
+        <%= link_to "Home", root_path %>
+        <%= link_to "About", about_path %>
+      </div>
 
       <div>
         <% if user_signed_in? %>
           <%= link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete } %>
         <% else %>
           <div class="flex space-x-2">
-            <div><%= link_to "Sign up", new_user_registration_path %></div>
-            <div><%= link_to "Sign in", new_user_session_path %></div>
+            <%= link_to "Sign up", new_user_registration_path %>
+            <%= link_to "Sign in", new_user_session_path %>
           </div>
         <% end %>
       </div>
