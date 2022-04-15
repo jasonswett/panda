@@ -39,6 +39,6 @@ export default class extends Controller {
       delay = 50
     }
 
-    setTimeout(() => { window.location = selectedElement.href }, delay)
+    setTimeout(() => { this.element.submit() }, delay)
   }
 }

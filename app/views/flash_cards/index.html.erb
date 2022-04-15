@@ -5,12 +5,15 @@
 </div>
 
 <div class="px-2">
-  <div class="answers flex justify-between mx-auto mt-20" data-controller="answers">
-    <% @options.each do |option| %>
-      <%= link_to option,
-        root_path,
-        class: "answer-button #{option == @phrase.pinyin ? "correct-answer" : ""}",
-        data: { action: "click->answers#handleClick" } %>
+  <div class="answers flex justify-between mx-auto mt-20">
+    <% @answers.each do |answer| %>
+      <%= form_for answer, data: { controller: "answers" } do |f| %>
+        <%= f.hidden_field :phrase_id %>
+        <%= f.hidden_field :correct %>
+        <%= button_tag answer.text,
+          class: "answer-button #{answer.correct ? "correct-answer" : ""}",
+          data: { action: "click->answers#handleClick" } %>
+      <% end %>
     <% end %>
   </div>
 </div>
