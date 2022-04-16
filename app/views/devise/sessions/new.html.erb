@@ -1,5 +1,8 @@
 <h2>Sign In</h2>
 
+<div id="notice" class="text-red-500"><%= notice %></div>
+<div id="alert" class="text-red-500"><%= alert %></div>
+
 <%= form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: false }) do |f| %>
   <div class="field">
     <%= f.label :email %><br />
