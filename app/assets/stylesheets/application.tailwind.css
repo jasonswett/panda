@@ -10,7 +10,7 @@
   @apply font-bold;
 }
 
-input[type=text] {
+input[type=text], input[type=email], input[type=password] {
   width: 300px;
   @apply rounded;
 }
