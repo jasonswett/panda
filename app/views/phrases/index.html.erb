@@ -10,14 +10,12 @@
   <tr>
     <th class="border border-black p-2">Chinese</th>
     <th class="border border-black p-2">Pinyin</th>
-    <th class="border border-black p-2">English</th>
   </tr>
 
   <% @phrases.each do |phrase| %>
     <tr>
       <td class="border border-black p-2"><%= phrase.chinese_simplified %></td>
       <td class="border border-black p-2"><%= phrase.pinyin %></td>
-      <td class="border border-black p-2"><%= phrase.english %></td>
     </tr>
   <% end %>
 </table>

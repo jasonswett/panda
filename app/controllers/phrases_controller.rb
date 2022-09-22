@@ -58,6 +58,6 @@ class PhrasesController < ApplicationController
   end
 
   def phrase_params
-    params.require(:phrase).permit(:english, :pinyin, :chinese_simplified)
+    params.require(:phrase).permit(:pinyin, :chinese_simplified)
   end
 end
