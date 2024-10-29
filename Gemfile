@@ -74,4 +74,5 @@ group :development, :test do
   gem "capybara"
   gem "webdrivers"
   gem "faker"
+  gem 'dotenv-rails'
 end
