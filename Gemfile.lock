@@ -1,3 +1,9 @@
+GIT
+  remote: git@github.com:jasonswett/panda-private-gem.git
+  revision: 8e997abdd8f7e73741b0f76c185c2ad987232133
+  specs:
+    panda_private_gem (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -299,6 +305,7 @@ DEPENDENCIES
   faker
   importmap-rails
   jbuilder
+  panda_private_gem!
   pg (~> 1.1)
   pry
   puma (~> 5.0)
