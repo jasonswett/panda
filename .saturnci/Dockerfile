@@ -7,10 +7,7 @@ WORKDIR /code
 # Accept GitHub token as build arg for private repos
 ARG GITHUB_TOKEN
 
-# Configure git to use HTTPS with token for SSH URLs if token is provided
-RUN if [ -n "$GITHUB_TOKEN" ]; then \
-      git config --global url."https://${GITHUB_TOKEN}:x-oauth-basic@github.com/".insteadOf "git@github.com:"; \
-    fi
+RUN git config --global url."https://x-access-token:${GITHUB_TOKEN}@github.com/".insteadOf "git@github.com:"
 
 # Install Ruby dependencies
 COPY Gemfile Gemfile.lock /code/
