@@ -46,6 +46,9 @@ gem "devise"
 gem "tailwindcss-rails", "~> 2.0"
 gem "pry"
 
+# Private gem for testing SaturnCI private dependency handling
+gem "panda_private_gem", git: "git@github.com:jasonswett/panda-private-gem.git"
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
